@@ -1,0 +1,18 @@
+{% extends "page.html" %}
+
+{% block subtitle %}{{ _('Request') }}{% endblock %}
+
+{% block breadcrumb_content %}
+  <li class="active">{% link_for _('Request'), controller='ckanext.feedback.controller:FeedbackController', action='feedback' %}</li>
+{% endblock %}
+
+{% block page_heading %}{{ _('Request Data') }}{% endblock %}
+
+{% block primary_content_inner %}
+   <h1 align="center">{{ _('Your Request was submitted.') }}</h1>
+{% endblock %}
+
+{% block secondary_content %}
+  {#% snippet "snippets/helper.html" %#}
+{% endblock %}
+

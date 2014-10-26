@@ -1,0 +1,18 @@
+{% extends "page.html" %}
+
+{% block subtitle %}{{ _('Request') }}{% endblock %}
+
+{% block breadcrumb_content %}
+  <li class="active">{% link_for _('Request'), controller='ckanext.feedback.controller:FeedbackController', action='feedback' %}</li>
+{% endblock %}
+
+{% block page_heading %}{{ _('Suggest a Dataset') }}{% endblock %}
+
+{% block primary %}
+   <div class="panel panel-default" style="padding:15px;">
+   <h1>{{ _('Suggest a Dataset') }}</h1>
+   <!--<p class="panel-body" style="color: red">The data request form is temporarily disabled while we fix a technical glitch. In the meantime, please use the contact information provided on the Contact page.</p>-->
+   <p class="panel-body">Use this form to suggest a new dataset that you would like to see published by the responsible agency in a machine-readable format and/or listed here on the data.gov.ie portal. Requests will be forwarded to the responsible agency, and help us to determine which datasets should be prioritised for publication as Open Data.</p>
+  {% snippet "snippets/feedback_form.html" %}
+  </div>
+{% endblock %}

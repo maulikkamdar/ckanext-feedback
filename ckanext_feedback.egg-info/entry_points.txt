@@ -1,0 +1,4 @@
+
+        [ckan.plugins]
+        feedback=ckanext.feedback.plugin:FeedbackPlugin
+    

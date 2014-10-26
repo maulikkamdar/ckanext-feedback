@@ -1,0 +1,23 @@
+{% import 'macros/form.html' as form %}
+
+<form class="dataset-form form-horizontal" method="post" action='/feedbackProv' data-module="basic-form">
+  {% block basic_fields %}
+    {% set attrs = {'data-module': 'slug-preview-target'} %}
+    {{ form.input('name', label=_('Full Name'), id='field-name', placeholder=_('Your Full Name'), value='', classes=['control-full'], attrs=attrs, is_required=true) }}
+    {{ form.input('email', label=_('Email Address'), id='field-email', placeholder=_('Your Email Address'), value='', classes=['control-full'], attrs=attrs, is_required=true) }}
+    
+    {{ form.input('organization', label=_('Organization'), id='field-organization', placeholder=_('Your Organization'), value='', classes=['control-full'], attrs=attrs, is_required=true) }}
+    {#{ form.input('organizationurl', label=_('Organization Website'), id='field-organization-url', placeholder=_('Your Organization Website'), value='', classes=['control-full'], attrs=attrs, is_required=true) }#}
+    
+    {#{ form.select('feedbacktype', label=_('Type of Feedback'), id='field-feedback-type', options=[{'value': "Data", 'text': "Data Request"}, {'value': "Feature", 'text': "Feature Request"}, {'value': "Bug", 'text': "Bug Report"}, {'value': "Other", 'text': "Other"}], selected=Data, is_required=true) }#}
+    {{ form.input('datasetName', label=_('Name of the Dataset'), id='field-dataset', placeholder=_('Name of the Dataset'), value='', classes=['control-full'], attrs=attrs, is_required=true) }}
+    {{ form.markdown('description', label=_('Request Details'), id='field-description', placeholder=_('Information pertaining to the request'), value='', is_required=true) }}
+    {{ form.info(_('Please include full details, e.g., the contents of the requested dataset, desired file formats, what you would do with the data, the name of the agency that would most likely be able to fulfil the request, and any relevant links to agency web pages about the data.')) }}<br>
+
+  {% endblock %}
+
+  {{ form.required_message() }}
+  <div class="form-actions">
+    <button class="btn btn-primary" name="save" type="submit">{% block save_text %}{{ _('Request') }}{% endblock %}</button>
+  </div>
+</form>

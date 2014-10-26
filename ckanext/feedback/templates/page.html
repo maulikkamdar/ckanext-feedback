@@ -1,0 +1,20 @@
+{% ckan_extends %}
+
+{% block sidebar_site_navigation_tabs %}
+  {{ h.build_nav_main(
+    ('search', _('Datasets')),
+    ('organizations_index', _('Organizations')),
+    ('group_index', _('Groups')),
+    ('feedback', _('Request')),
+    ('about', _('About'))
+  ) }}
+{% endblock %}
+
+{% block sidebar_site_small_navigation_tabs %}
+  <li><a href="/dataset" class="text-center"><i class="icon-small icon-sitemap"></i></a></li>
+  <li><a href="/organization" class="text-center"><i class="icon-small icon-building"></i></a></li>
+  <li><a href="/group" class="text-center"><i class="icon-small icon-group"></i></a></li>
+  <li><a href="/feedback" class="text-center"><i class="icon-small icon-pencil"></i></a></li>
+  <li><a href="/about" class="text-center"><i class="icon-small icon-info"></i></a></li>
+{% endblock %}
+
